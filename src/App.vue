@@ -327,7 +327,7 @@ const cameraSound = ref(null);
 // 创建音频对象（替换为你的音效路径）
 cameraSound.value = new Audio(new URL('./assets/audio/camera_turn.mp3', import.meta.url).href);
 // 设置音效音量（0-1，可调整）
-cameraSound.value.volume = 0.7;
+// cameraSound.value.volume = 0.7;
 
 // 初始化Steam图片列表（重置Steam索引）
 const initSteamImgList = () => {
@@ -1432,12 +1432,12 @@ onUnmounted(() => {
 .steam-frame-img {
   position: fixed; /* 改为fixed，基于视口定位，缩放时跟随屏幕 */
   top: 50%;       /* 垂直居中基准 */
-  left: 50%;      /* 水平居中基准 */
+  left: 49.5%;      /* 水平居中基准 */
   /* 核心：用transform替代固定top/left，基于自身中心偏移，缩放时比例不变 */
   transform: translate(-50%, -50%);
   /* 保留你满意的尺寸比例，用vw/vh适配缩放（110vw/100vh不变） */
   width: 125vw;
-  height: 130vh;
+  height: 100vh;
   object-fit: cover; /* 保持你满意的覆盖效果 */
   z-index: 1;
   pointer-events: none;
