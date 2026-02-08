@@ -1,0 +1,86 @@
+/* style.css 完整修改版 */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  /* 🔥 删除全局背景色 + 全局文字色（交给组件自己控制） */
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* 🔥 确保body无背景色，不干扰组件 */
+  background: transparent;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* 🔥 给button加作用域，只影响非组件内的按钮（避免覆盖组件按钮） */
+button:not(.cute-btn):not(.popup-close):not(.change-quote-btn):not(.steam-btn):not(.confirm-btn) {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:not(.cute-btn):not(.popup-close):not(.change-quote-btn):not(.steam-btn):not(.confirm-btn):hover {
+  border-color: #646cff;
+}
+button:not(.cute-btn):not(.popup-close):not(.change-quote-btn):not(.steam-btn):not(.confirm-btn):focus,
+button:not(.cute-btn):not(.popup-close):not(.change-quote-btn):not(.steam-btn):not(.confirm-btn):focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  /* 🔥 完全清空#app的样式，交给组件自己控制 */
+  width: 100vw;
+  height: 100vh;
+  text-align: left; /* 取消全局居中 */
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    /* 🔥 删除全局背景色 */
+    /* background-color: #ffffff; */
+  }
+  a:hover {
+    color: #747bff;
+  }
+  /* 🔥 同样给button加作用域 */
+  button:not(.cute-btn):not(.popup-close):not(.change-quote-btn):not(.steam-btn):not(.confirm-btn) {
+    background-color: #f9f9f9;
+  }
+}
